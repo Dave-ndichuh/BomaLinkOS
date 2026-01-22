@@ -1,0 +1,31 @@
+esphome:
+  name: "kitchen_power_node"
+  platform: ESP32
+  board: nodemcu-32s
+
+wifi:
+  ssid: "BomaLink_Local"
+  password: "securepassword"
+
+# The Open Standard Protocol
+mqtt:
+  broker: "192.168.1.100" # Your Pi's IP
+
+# The Sensor Logic
+sensor:
+  - platform: pzem004t # The $3 Generic Power Sensor
+    current:
+      name: "Kitchen Amps"
+    voltage:
+      name: "Grid Voltage"
+    power:
+      name: "Kitchen Watts"
+    update_interval: 5s
+
+# The Switch Logic
+switch:
+  - platform: gpio
+    pin: 25
+    name: "Kitchen Relay"
+    id: relay_1
+

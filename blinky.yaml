@@ -1,0 +1,22 @@
+esphome:
+  name: "blinky_switch"
+  platform: ESP32
+  board: nodemcu-32s
+
+wifi:
+  ssid: "BomaLink_Local"
+  password: "securepassword"
+  # Enable fallback AP in case main WiFi is not available
+  ap:
+    ssid: "BomaLink_Blinky_Fallback"
+    password: "fallbacksecurepassword"
+
+# Enable the API for Home Assistant (and potentially other tools)
+api:
+
+og:
+  - platform: gpio
+    pin: 2
+    name: "Blinky LED Switch"
+    id: blinky_led
+

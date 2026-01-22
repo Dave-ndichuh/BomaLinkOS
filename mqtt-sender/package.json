@@ -1,0 +1,12 @@
+{
+  "name": "mqtt-sender",
+  "version": "1.0.0",
+  "description": "A simple Node.js MQTT sender for BomaLink OS",
+  "main": "sender.js",
+  "scripts": {
+    "start": "node sender.js"
+  },
+  "dependencies": {
+    "mqtt": "^4.3.7"
+  }
+}
